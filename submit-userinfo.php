@@ -42,6 +42,7 @@
                         }
                     ?>
                     <input type="hidden" name="uuid" value="<?php echo $uuid?>" />
+                    <button type="submit">submit</button>
                 </form>
             </div>
         </div>
@@ -53,5 +54,5 @@
 <script src="js/jquery.js"></script>
 
 <script type="text/javascript">
-    $("#form-submit").submit();
+    //$("#form-submit").submit();
 </script>
