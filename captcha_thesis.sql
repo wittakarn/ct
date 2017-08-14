@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `alphabets17` (
   `key_down` varchar(20) DEFAULT NULL,
   `key_up` varchar(20) DEFAULT NULL,
   `correct` int(1) DEFAULT NULL COMMENT '1=true, 2=false',
-  `timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
+  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`char_index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `cw` (
   `word_index` int(11) NOT NULL,
   `wording` varchar(50) NOT NULL,
   `correct` int(1) DEFAULT NULL COMMENT '1=true, 2=false',
-  `timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
+  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`word_index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `cw_alphabets` (
   `key_down` varchar(20) DEFAULT NULL,
   `key_up` varchar(20) DEFAULT NULL,
   `correct` int(1) DEFAULT NULL COMMENT '1=true, 2=false',
-  `timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
+  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`char_index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `fl_alphabets` (
   `key_down` varchar(20) DEFAULT NULL,
   `key_up` varchar(20) DEFAULT NULL,
   `correct` int(1) DEFAULT NULL COMMENT '1=true, 2=false',
-  `timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
+  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`char_index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `rd` (
   `word_index` int(11) NOT NULL,
   `wording` varchar(50) NOT NULL,
   `correct` int(1) DEFAULT NULL COMMENT '1=true, 2=false',
-  `timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
+  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`word_index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `rd_alphabets` (
   `key_down` varchar(20) DEFAULT NULL,
   `key_up` varchar(20) DEFAULT NULL,
   `correct` int(1) DEFAULT NULL COMMENT '1=true, 2=false',
-  `timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
+  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`char_index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `user_information` (
   `gender` int(11) NOT NULL COMMENT '1=ชาย, 2=หญิง',
   `age` int(11) NOT NULL COMMENT '1=10-25, 2=26-40, 3=41-60, 4=มากกว่า 60',
   `favorite_color` varchar(100) NOT NULL,
-  `timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
+  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `words17` (
   `word_index` int(11) NOT NULL,
   `wording` varchar(50) NOT NULL,
   `correct` int(1) DEFAULT NULL COMMENT '1=true, 2=false',
-  `timestamp` datetime DEFAULT CURRENT_TIMESTAMP,
+  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`,`word_index`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
