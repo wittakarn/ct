@@ -1,0 +1,61 @@
+input[type="checkbox"] {
+    margin-right: 80px;
+}
+
+input[type="checkbox"]::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 15px;
+    position: relative;
+    top: 0px;
+    left: 20px;
+}
+
+#red::after {
+    background: #FF0000;
+}
+
+#orange::after {
+    background: #FF7F00;
+}
+
+#yellow::after {
+    background: #FFFF00;
+}
+
+#chartreuseGreen::after {
+    background: #7FFF00;
+}
+
+#green::after {
+    background: #00FF00;
+}
+
+#springGreen::after {
+    background: #00FF7F;
+}
+
+#cyan::after {
+    background: #00FFFF;
+}
+
+#azure::after {
+    background: #007FFF;
+}
+
+#blue::after {
+    background: #0000FF;
+}
+
+#violet::after {
+    background: #7F00FF;
+}
+
+#magenta::after {
+    background: #FF00FF;
+}
+
+#rose::after {
+    background: #FF007F;
+}

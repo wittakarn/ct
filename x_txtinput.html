@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Typing Test</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    </style>
+
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script language="javascript">
+
+      var Keystroke = function (keyCode, time1, time2, time3) {
+        this.keyCode = keyCode;
+        this.time1 = time1;
+        this.time2 = time2;
+        this.time3 = time3;
+      };
+
+      var keystrokeArray = [];
+      var startIndex = 1;
+      var keyDownTime;
+      var keyPressTime;
+      var keyUpTime;
+
+      $(document).ready(onload);
+      
+      function onload() {
+
+        $("#txt").keydown(function(event){
+          if(event.keyCode >= 65 && event.keyCode <= 122){
+            var d = new Date ();
+            var n = d.getTime();
+
+            keyDownTime = n;
+          }else if(event.keyCode == 32){
+            var inputLength = $("#txt").val().length;
+            var currentLabelId = "label".concat(startIndex);
+            var labelLength = $("#" + currentLabelId).text().length;
+
+            console.log("inputLength : " + inputLength);
+            console.log("labelLength : " + labelLength);
+            if(inputLength >= labelLength){
+              updateUnderline();
+            }
+          }
+        });
+        
+        
+        $("#txt").keypress(function(event){
+          if(event.keyCode >= 65 && event.keyCode <= 122){
+            var d = new Date ();
+            var n = d.getTime();
+
+            keyPressTime = n;
+          }else if(event.keyCode == 32){
+            var inputLength = $("#txt").val().length;
+            var currentLabelId = "label".concat(startIndex);
+            var labelLength = $("#" + currentLabelId).text().length;
+
+            console.log("inputLength : " + inputLength);
+            console.log("labelLength : " + labelLength);
+            if(inputLength >= labelLength){
+              updateUnderline();
+            }
+          }
+        });
+        
+        $("#txt").keyup(function(event){
+          var code = event.keyCode;
+
+          if(code >= 65 && code <= 122){
+            var d = new Date ();
+            var n = d.getTime();
+
+            keyUpTime = n;
+
+            keystrokeArray.push(new Keystroke(code,keyDownTime, keyPressTime, keyUpTime));
+            keyDownTime = null;
+            keyPressTime = null;
+            keyUpTime = null;
+            
+            console.log(keystrokeArray);
+            
+            $("#jsonString").val(JSON.stringify(keystrokeArray));
+          }
+        });
+
+        $("#txt").keydown(function(event){
+          var code = event.keyCode;
+
+          if(code == 8 || code == 48){
+            keystrokeArray.pop();
+            //event.preventDefault();
+          }
+        });
+        
+      }
+
+      function updateUnderline(){
+        startIndex++;
+        $(".static-label").css("text-decoration", "");
+
+        var nextLabelId = "label".concat(startIndex);
+        var nextLabelElement = $("#" + nextLabelId);
+
+        nextLabelElement.css("text-decoration", "underline");
+        $("#txt").val("");
+      }
+      
+    </script> 
+
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Typing Test</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <form class="form-inline" method="post" action="show_typing.php">
+                
+                <div class="col-md-8">
+                    <h1>Typing Test</h1>
+                        
+                        <div class="form-group">
+                            <label class="sr-only">Name</label>
+                            <h4>
+                                <p class="form-control-static">User:</p>
+                            </h4>
+                        </div>
+                        <div class="form-group mx-sm-3">
+                            <label for="inputName" class="sr-only">name</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                        </div>        
+                </div>
+
+                <!--Show Text -->
+                <div class="col-md-8">
+                    <label class="static-label" id="label1" style="text-decoration: underline;">The quick</label>
+        <label class="static-label" id="label2">brown fox</label>
+        <label class="static-label" id="label3">jumps over</label>
+        <label class="static-label" id="label4">the lazy dog.</label>
+        <label class="static-label" id="label5">Pack my box</label>
+        <label class="static-label" id="label6">with five dozen</label>
+        <label class="static-label" id="label7">liquor jugs.</label>
+        <label class="static-label" id="label8">The quick</label>
+        <label class="static-label" id="label9">onyx goblin</label>
+        <label class="static-label" id="label10">jumps over</label>
+        <label class="static-label" id="label11">the lazy dwarf.</label>
+        <label class="static-label" id="label12">Jackdaws love</label>
+        <label class="static-label" id="label13">my big</label>
+        <label class="static-label" id="label14">sphinx of quartz.</label>
+                </div>
+                <!--/Show Text -->
+
+                <!--input text -->
+                <div class="col-md-8" >
+                    <div class="form-group">
+                        <input type="text" id="txt" class="form-control" size="100" maxlength="256" placeholder="Type text .." />
+                    </div>
+                </div>
+                <!--/input text -->
+
+                <!--button Next -->
+                <div class="col-md-8" >
+                    <input type="text" name="json_string" id="jsonString" style="width:100%;"/>
+                    <button type="submit" class="btn btn-default">Next</button>
+                </div>
+                <!--/button Next -->
+
+
+            </form>
+            <!-- /.form -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+</body>
+
+</html>
