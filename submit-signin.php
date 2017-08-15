@@ -3,7 +3,7 @@
     ini_set('display_errors', 1);
     require_once("config.php");
     require_once("connection.php");
-    require_once(DOCUMENT_ROOT."class/UserInformation.php");
+    require_once(DOCUMENT_ROOT."class/User.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,21 +18,25 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>กรุณารอสักครู่</h1>
                 <form id="form-submit" class="form-inline" action="17words.php" method="get">
                     <?php
-                        $uuid = uniqid();
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                             $conn = DataBaseConnection::createConnect();
                             
                             try{
-                                if(isset($_REQUEST['name'])){
-                                    $conn->beginTransaction();
+                                if(isset($_REQUEST['email'])){
+                                    $user = User::get($conn, $_REQUEST['email']);
+                                    $isFailed = true;
+                                    if($user != null && $user["password"] == $_REQUEST['password']){
+                                        $isFailed = false;
+                                    }
+                                }
 
-                                    $userInfo = new UserInformation($conn, $_REQUEST);
-                                    $userInfo->create($uuid);
-                                    
-                                    $conn->commit();
+                                if($isFailed){
+                                    echo "<h2>Email หรือ Password ผิดกรุณาลองอีกครั้ง</h2>";
+                                }else{
+                                    echo "<h2>กรุณารอซักครู่</h2>";
+                                    echo "<input type='hidden' name='uuid' value=".$user["id"]." />";
                                 }
                             } catch (PDOException $e) {
                                 $conn->rollBack();
@@ -41,8 +45,6 @@
                             $conn = null;
                         }
                     ?>
-                    <input type="hidden" name="uuid" value="<?php echo $uuid?>" />
-                    <button type="submit">submit</button>
                 </form>
             </div>
         </div>
@@ -54,5 +56,13 @@
 <script src="js/jquery.js"></script>
 
 <script type="text/javascript">
-    //$("#form-submit").submit();
+    var form = $("#form-submit");
+    <?php
+        if($isFailed){
+            echo "form.attr('action', 'index.php');";
+        }
+    ?>
+    setTimeout(function(){
+        form.submit();
+    }, 3000);
 </script>

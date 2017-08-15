@@ -53,7 +53,6 @@
                         }
                     ?>
                     <input type="hidden" name="uuid" value="<?php echo $_REQUEST['uuid']; ?>" />
-                    <button type="submit">submit</button>
                 </form>
             </div>
         </div>
@@ -65,5 +64,8 @@
 <script src="js/jquery.js"></script>
 
 <script type="text/javascript">
-    //$("#form-submit").submit();
+    var form = $("#form-submit");
+    setTimeout(function(){
+        form.submit();
+    }, 3000);
 </script>
