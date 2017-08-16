@@ -5,6 +5,7 @@
     require_once("connection.php");
     require_once(DOCUMENT_ROOT."class/UserInformation.php");
     require_once(DOCUMENT_ROOT."class/WordsGenerator.php");
+    require_once(DOCUMENT_ROOT."class/UserKey.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +39,9 @@
                                 $uuid = $_REQUEST['uuid'];
 
                                 $conn = DataBaseConnection::createConnect();
-                                $userInfo = UserInformation::get($conn, $uuid);
+
+                                $userKey = UserKey::get($conn, $uuid);
+                                $userInfo = UserInformation::get($conn, $userKey["email"]);
                                 $colours = explode(",", $userInfo['favorite_color']);
 
                                 $firstColor = $colours[0];

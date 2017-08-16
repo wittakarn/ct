@@ -5,6 +5,7 @@
     require_once("connection.php");
     require_once(DOCUMENT_ROOT."class/UserInformation.php");
     require_once(DOCUMENT_ROOT."class/User.php");
+    require_once(DOCUMENT_ROOT."class/UserKey.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +38,9 @@
     
                                         $user = new User($conn, $_REQUEST);
                                         $user->create($uuid);
+
+                                        $userKey = new UserKey($conn, $_REQUEST);
+                                        $userKey->create($uuid);
                                         
                                         $conn->commit();
                                     }else{
