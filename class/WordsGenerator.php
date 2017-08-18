@@ -49,8 +49,8 @@ class WordsGenerator
         shuffle($words17);
         shuffle($rdWords);
         
-        $generateColors = array($words17[0]["wording"], $words17[1]["wording"], 
-                                $rdWords[0]["wording"], $rdWords[1]["wording"], 
+        $generateColors = array($words17[0]["wording"], $words17[1]["wording"], $words17[2]["wording"], 
+                                $rdWords[0]["wording"], $rdWords[1]["wording"], $rdWords[2]["wording"], 
                                 self::REPEAT_WORD_1, self::REPEAT_WORD_2);
 
         return $generateColors;

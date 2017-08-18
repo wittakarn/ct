@@ -44,20 +44,10 @@
                                 $userInfo = UserInformation::get($conn, $userKey["email"]);
                                 $colours = explode(",", $userInfo['favorite_color']);
 
-                                $firstColor = $colours[0];
-                                $secondColor = $colours[1];
-
                                 $words = WordsGenerator::colorWordsGenerator($conn, $uuid);
                                 $sentense = implode(" ", $words);
 
-                                for ($i = 0; $i < count($words); $i++) {
-                                    if($i % 2 == 0){
-                                        echo "<span class='color-word' style='color:".$firstColor."'>".$words[$i]."</span>";
-                                    }else{
-                                        echo "<span class='color-word' style='color:".$secondColor."'>".$words[$i]."</span>";
-                                    }
-                                    echo " ";
-                                }
+                                echo "<span class='color-word' style='color:".$colours[0].";background:".$colours[1]."'>".$sentense."</span>";
                             }
                         ?>
                     </p>

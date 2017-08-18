@@ -74,8 +74,11 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">เพศ</label>
                         <div class="col-sm-9">
-                            <input type="radio" name="gender" value="1" checked="true"> ชาย <br>
-                            <input type="radio" name="gender" value="2"> หญิง <br>
+                            <input type="radio" name="gender" value="1" checked="true"> ชาย </input>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <input type="radio" name="gender" value="2"> หญิง </input>
                         </div>
                     </div>
                     <!-- /.gender -->
@@ -84,38 +87,48 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">อายุ</label>
                         <div class="col-sm-9">
-                            <input type="radio" name="age" value="1" checked="true"> 10-25 <br>
-                            <input type="radio" name="age" value="2"> 26-40 <br>
-                            <input type="radio" name="age" value="3"> 41-60 <br>
-                            <input type="radio" name="age" value="4"> มากกว่า 60 <br>
+                        <input type="radio" name="age" value="1" checked="true"> 10-25 </input>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <input type="radio" name="age" value="2"> 26-40 </input>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <input type="radio" name="age" value="3"> 41-60 </input>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <input type="radio" name="age" value="4"> มากกว่า 60 </input>
                         </div>
                     </div>
                     <!-- /.age -->
 
                     <!-- favorite color -->
                     <div class="form-group">
-                        <label for="favoriteColor[]" class="col-sm-3 control-label">สีที่ชอบ(เลือก 2 สี)</label>
+                        <label for="favoriteColor" class="col-sm-3 control-label">รูปแบบที่ชอบ</label>
                         <div class="col-sm-9">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <input id="red" type="checkbox" name="favoriteColor[]" value="#FF0000"></input>
-                                    <input id="orange" type="checkbox" name="favoriteColor[]" value="#FF7F00"></input>
-                                    <input id="yellow" type="checkbox" name="favoriteColor[]" value="#FFFF00"></input>
-                                    <input id="chartreuseGreen" name="favoriteColor[]" type="checkbox" value="#7FFF00"></input>
-                                </div>
-                                <div class="col-sm-12">
-                                    <input id="green" type="checkbox" name="favoriteColor[]" value="#00FF00"></input>
-                                    <input id="springGreen" type="checkbox" name="favoriteColor[]" value="#00FF7F"></input>
-                                    <input id="cyan" type="checkbox" name="favoriteColor[]" value="#00FFFF"></input>
-                                    <input id="azure" type="checkbox" name="favoriteColor[]" value="#007FFF"></input>
-                                </div>
-                                <div class="col-sm-12">
-                                    <input id="blue" type="checkbox" name="favoriteColor[]" value="#0000FF"></input>
-                                    <input id="violet" type="checkbox" name="favoriteColor[]" value="#7F00FF"></input>
-                                    <input id="magenta" type="checkbox" name="favoriteColor[]" value="#FF00FF"></input>
-                                    <input id="rose" type="checkbox" name="favoriteColor[]" value="#FF007F"></input>
-                                </div>
-                            </div>
+                        <input id="colorGroup1" type="radio" name="favoriteColor" value="#FF0000,#00FF00"></input>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <input id="colorGroup2" type="radio" name="favoriteColor" value="#FFFF00,#FF00FF"></input>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <input id="colorGroup3" type="radio" name="favoriteColor" value="#00FF00,#FF0000"></input>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <input id="colorGroup4" type="radio" name="favoriteColor" value="#00FFFF,#FF4000"></input>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <input id="colorGroup5" type="radio" name="favoriteColor" value="#0000FF,#FF8000"></input>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <input id="colorGroup6" type="radio" name="favoriteColor" value="#FF00FF,#FFFF00"></input>
                         </div>
                     </div>
                     <!-- /.favorite color -->

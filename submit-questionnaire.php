@@ -23,6 +23,7 @@
                 <h1>กรุณารอสักครู่</h1>
                 <form id="form-submit" class="form-inline" action="17words.php" method="get">
                     <?php
+                        $createUserFailed = false;
                         $uuid = uniqid();
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                             $conn = DataBaseConnection::createConnect();
@@ -51,6 +52,7 @@
                                 if($duplicateUser == null){
                                     $conn->rollBack();
                                 }
+                                $createUserFailed = true;
                                 echo "Failed: " . $e->getMessage();
                             }
                             $conn = null;
@@ -70,7 +72,7 @@
 <script type="text/javascript">
     var form = $("#form-submit");
     <?php
-        if($duplicateUser != null){
+        if($duplicateUser != null && $createUserFailed){
             echo "form.attr('action', 'questionnaire.php');";
         }
     ?>

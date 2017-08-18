@@ -20,8 +20,7 @@ class UserInformation
 		$stmt->bindParam(":phone", $params['phone'], PDO::PARAM_STR);
 		$stmt->bindParam(":gender", $params['gender'], PDO::PARAM_INT);
 		$stmt->bindParam(":age", $params['age'], PDO::PARAM_INT);
-		$favoriteColor = implode(",", $params['favoriteColor']);
-		$stmt->bindParam(":favorite_color", $favoriteColor, PDO::PARAM_STR);
+		$stmt->bindParam(":favorite_color", $params['favoriteColor'], PDO::PARAM_STR);
 		$stmt->execute();
 	}
 
