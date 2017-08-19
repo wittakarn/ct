@@ -23,10 +23,8 @@ submitForm.validate({
             required: true,
             minlength: 1,
         },
-        "favoriteColor[]": {
+        "favoriteColor": {
             required: true,
-            minlength: 2,
-            maxlength: 2
         }
     },
     messages: {
@@ -45,18 +43,20 @@ submitForm.validate({
             equalTo: "ยืนยันรหัสผ่าน ต้องตรงกับรหัสผ่านที่ระบุด้านบน"
         },
         "phone": "ข้อมูลต้องระบุ",
-        "favoriteColor[]": {
-            required: "ข้อมูลต้องระบุให้ครบ 2 สี",
-            minlength: "ข้อมูลต้องระบุให้ครบ 2 สี",
-            maxlength: "ข้อมูลต้องระบุเพียง 2 สีเท่านั้น",
+        "favoriteColor": {
+            required: "ข้อมูลต้องระบุ",
         }
     },
     errorElement: "em",
     errorPlacement: function (error, element) {
         // Add the `help-block` class to the error element
         error.addClass("help-block");
-        if (element.prop("type") === "checkbox") {
-            error.insertAfter(element.parent("div").parent("div"));
+        if (element.prop("type") === "radio") {
+            try{
+                error.insertAfter(element.parent("div").parent("div").children().children().last());
+            }catch(err){
+                error.insertAfter(element);
+            }
         } else {
             error.insertAfter(element);
         }

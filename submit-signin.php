@@ -4,6 +4,7 @@
     require_once("config.php");
     require_once("connection.php");
     require_once(DOCUMENT_ROOT."class/User.php");
+    require_once(DOCUMENT_ROOT."class/UserKey.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +30,10 @@
                                     $isFailed = true;
                                     if($user != null && $user["password"] == $_REQUEST['password']){
                                         $isFailed = false;
+                                        $uuid = uniqid();
+
+                                        $userKey = new UserKey($conn, $_REQUEST);
+                                        $userKey->create($uuid);
                                     }
                                 }
 
@@ -36,7 +41,7 @@
                                     echo "<h2>Email หรือ Password ผิดกรุณาลองอีกครั้ง</h2>";
                                 }else{
                                     echo "<h2>กรุณารอซักครู่</h2>";
-                                    echo "<input type='hidden' name='uuid' value=".$user["id"]." />";
+                                    echo "<input type='hidden' name='uuid' value=".$uuid." />";
                                 }
                             } catch (PDOException $e) {
                                 $conn->rollBack();

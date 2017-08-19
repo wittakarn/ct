@@ -97,20 +97,28 @@ CREATE TABLE IF NOT EXISTS `rd_alphabets` (
 CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `id` varchar(20) NOT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 -- Dumping structure for table captcha_thesis.user_information
 CREATE TABLE IF NOT EXISTS `user_information` (
-  `id` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
   `phone` varchar(50) NOT NULL,
   `gender` int(11) NOT NULL COMMENT '1=ชาย, 2=หญิง',
   `age` int(11) NOT NULL COMMENT '1=10-25, 2=26-40, 3=41-60, 4=มากกว่า 60',
+  `faculty` int(11) NOT NULL COMMENT '1=ครุศาสตร์,2=จิตวิทยา,3=ทันตแพทยศาสตร์,4=นิติศาสตร์,5=นิเทศศาสตร์,6=พยาบาลศาสตร์,7=พาณิชยศาสตร์และการบัญชี,8=แพทยศาสตร์,9=เภสัชศาสตร์,10=รัฐศาสตร์,11=วิทยาศาสตร์,12=วิศวกรรมศาสตร์,13=ศิลปกรรมศาสตร์,14=เศรษฐศาสตร์,15=สถาปัตยกรรมศาสตร์,16=สหเวชศาสตร์,17=สัตวแพทยศาสตร์,',
   `favorite_color` varchar(100) NOT NULL,
   `timestamp` timestamp DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
+-- Dumping structure for table captcha_thesis.user_key
+CREATE TABLE IF NOT EXISTS `user_key` (
+  `id` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

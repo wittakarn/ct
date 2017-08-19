@@ -5,6 +5,7 @@
     require_once("connection.php");
     require_once(DOCUMENT_ROOT."class/UserInformation.php");
     require_once(DOCUMENT_ROOT."class/User.php");
+    require_once(DOCUMENT_ROOT."class/UserKey.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +23,7 @@
                 <h1>กรุณารอสักครู่</h1>
                 <form id="form-submit" class="form-inline" action="17words.php" method="get">
                     <?php
+                        $createUserFailed = false;
                         $uuid = uniqid();
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                             $conn = DataBaseConnection::createConnect();
@@ -37,6 +39,9 @@
     
                                         $user = new User($conn, $_REQUEST);
                                         $user->create($uuid);
+
+                                        $userKey = new UserKey($conn, $_REQUEST);
+                                        $userKey->create($uuid);
                                         
                                         $conn->commit();
                                     }else{
@@ -47,6 +52,7 @@
                                 if($duplicateUser == null){
                                     $conn->rollBack();
                                 }
+                                $createUserFailed = true;
                                 echo "Failed: " . $e->getMessage();
                             }
                             $conn = null;
@@ -66,7 +72,7 @@
 <script type="text/javascript">
     var form = $("#form-submit");
     <?php
-        if($duplicateUser != null){
+        if($duplicateUser != null || $createUserFailed){
             echo "form.attr('action', 'questionnaire.php');";
         }
     ?>

@@ -1,61 +1,44 @@
-input[type="checkbox"] {
-    margin-right: 80px;
+input[type="radio"][name="favoriteColor"] {
+    height: 30px;
 }
 
-input[type="checkbox"]::after {
-    content: "";
+input[type="radio"][name="favoriteColor"]::after {
+    content: "ocean";
     display: block;
-    width: 40px;
-    height: 15px;
+    font-size: 24px;
+    width: 200px;
     position: relative;
     top: 0px;
     left: 20px;
+    text-align: center;
 }
 
-#red::after {
-    background: #FF0000;
-}
-
-#orange::after {
-    background: #FF7F00;
-}
-
-#yellow::after {
-    background: #FFFF00;
-}
-
-#chartreuseGreen::after {
-    background: #7FFF00;
-}
-
-#green::after {
+#colorGroup1::after {
+    color: #FF0000;
     background: #00FF00;
 }
 
-#springGreen::after {
-    background: #00FF7F;
-}
-
-#cyan::after {
-    background: #00FFFF;
-}
-
-#azure::after {
-    background: #007FFF;
-}
-
-#blue::after {
-    background: #0000FF;
-}
-
-#violet::after {
-    background: #7F00FF;
-}
-
-#magenta::after {
+#colorGroup2::after {
+    color: #FFFF00;
     background: #FF00FF;
 }
 
-#rose::after {
-    background: #FF007F;
+#colorGroup3::after {
+    color: #00FF00;
+    background: #FF0000;
+}
+
+#colorGroup4::after {
+    color: #00FFFF;
+    background: #FF4000;
+}
+
+#colorGroup5::after {
+    color: #0000FF;
+    background: #FF8000;
+}
+
+#colorGroup6::after {
+    color: #FF00FF;
+    background: #FFFF00;
 }
