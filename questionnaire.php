@@ -104,6 +104,33 @@
                     </div>
                     <!-- /.age -->
 
+                    <!-- faculty -->
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">ชื่อคณะที่กำลังศีกษาหรือเคยเรียนอยู่</label>
+                        <div class="col-sm-9">
+                        <select class="form-control" name="faculty">
+                            <option value="1">ครุศาสตร์</option>
+                            <option value="2">จิตวิทยา</option>
+                            <option value="3">ทันตแพทยศาสตร์</option>
+                            <option value="4">นิติศาสตร์</option>
+                            <option value="5">นิเทศศาสตร์</option>
+                            <option value="6">พยาบาลศาสตร์</option>
+                            <option value="7">พาณิชยศาสตร์และการบัญชี</option>
+                            <option value="8">แพทยศาสตร์</option>
+                            <option value="9">เภสัชศาสตร์</option>
+                            <option value="10">รัฐศาสตร์</option>
+                            <option value="11">วิทยาศาสตร์</option>
+                            <option value="12">วิศวกรรมศาสตร์</option>
+                            <option value="13">ศิลปกรรมศาสตร์</option>
+                            <option value="14">เศรษฐศาสตร์</option>
+                            <option value="15">สถาปัตยกรรมศาสตร์</option>
+                            <option value="16">สหเวชศาสตร์</option>
+                            <option value="17">สัตวแพทยศาสตร์</option>
+                        </select>
+                        </div>
+                    </div>
+                    <!-- /.faculty -->
+
                     <!-- favorite color -->
                     <div class="form-group">
                         <label for="favoriteColor" class="col-sm-3 control-label">รูปแบบที่ชอบ</label>

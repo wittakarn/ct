@@ -12,14 +12,15 @@ class UserInformation
 	public function create(){
 		$params = $this->requests;
 		$db = $this->dbh;
-		$query = "INSERT INTO user_information(email, name, phone, gender, age, favorite_color) VALUES 
-												(:email, :name, :phone, :gender, :age, :favorite_color)";
+		$query = "INSERT INTO user_information(email, name, phone, gender, age, faculty, favorite_color) VALUES 
+												(:email, :name, :phone, :gender, :age, :faculty, :favorite_color)";
 		$stmt = $db->prepare($query);
 		$stmt->bindParam(":email", $params['email'], PDO::PARAM_STR); 
 		$stmt->bindParam(":name", $params['name'], PDO::PARAM_STR);
 		$stmt->bindParam(":phone", $params['phone'], PDO::PARAM_STR);
 		$stmt->bindParam(":gender", $params['gender'], PDO::PARAM_INT);
 		$stmt->bindParam(":age", $params['age'], PDO::PARAM_INT);
+		$stmt->bindParam(":faculty", $params['faculty'], PDO::PARAM_INT);
 		$stmt->bindParam(":favorite_color", $params['favoriteColor'], PDO::PARAM_STR);
 		$stmt->execute();
 	}

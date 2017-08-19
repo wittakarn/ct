@@ -1,8 +1,8 @@
 <?php 
 session_start();
 //Settings: You can customize the captcha here
-$image_width = 300;
-$image_height = 90;
+$image_width = 1700;
+$image_height = 100;
 $characters_on_image = 5;
 $font = 'tahoma.ttf';
 
@@ -10,18 +10,11 @@ $font = 'tahoma.ttf';
 //avoid confusing characters (l 1 and i for example)
 $possible_letters = '23456789bcdfghjkmnpqrstvwxyz';
 $random_dots = 0;
-$random_lines = 5;
-$captcha_text_color="0x142864";
-$captcha_noice_color = "0x142864";
+$random_lines = 100;
+$captcha_text_color="0x000000";
+$captcha_noice_color = "0x000000";
 
-$code = '';
-
-
-$i = 0;
-while ($i < $characters_on_image) { 
-$code .= substr($possible_letters, mt_rand(0, strlen($possible_letters)-1), 1);
-$i++;
-}
+$code = 'jihads salvos emerod rocker slitty';
 
 
 $font_size = $image_height * 0.75;
@@ -32,12 +25,12 @@ $image = @imagecreate($image_width, $image_height);
 $background_color = imagecolorallocate($image, 255, 255, 255);
 
 $arr_text_color = hexrgb($captcha_text_color);
-$text_color = imagecolorallocate($image, $arr_text_color['red'], 
-        $arr_text_color['green'], $arr_text_color['blue']);
+$text_color = imagecolorallocate($image, $arr_text_color['black'], 
+        $arr_text_color['black'], $arr_text_color['black']);
 
 $arr_noice_color = hexrgb($captcha_noice_color);
-$image_noise_color = imagecolorallocate($image, $arr_noice_color['red'], 
-        $arr_noice_color['green'], $arr_noice_color['blue']);
+$image_noise_color = imagecolorallocate($image, $arr_noice_color['black'], 
+        $arr_noice_color['black'], $arr_noice_color['black']);
 
 
 /* generating the dots randomly in background */
@@ -71,8 +64,8 @@ function hexrgb ($hexstr)
 {
   $int = hexdec($hexstr);
 
-  return array("red" => 0xFF & ($int >> 0x10),
-               "green" => 0xFF & ($int >> 0x8),
-               "blue" => 0xFF & $int);
+  return array("black" => 0xFF & ($int >> 0x10),
+               "black" => 0xFF & ($int >> 0x8),
+               "black" => 0xFF & $int);
 }
 ?>

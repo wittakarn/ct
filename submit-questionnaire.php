@@ -72,7 +72,7 @@
 <script type="text/javascript">
     var form = $("#form-submit");
     <?php
-        if($duplicateUser != null && $createUserFailed){
+        if($duplicateUser != null || $createUserFailed){
             echo "form.attr('action', 'questionnaire.php');";
         }
     ?>
