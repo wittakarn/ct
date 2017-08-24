@@ -87,7 +87,7 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">อายุ</label>
                         <div class="col-sm-9">
-                        <input type="radio" name="age" value="1" checked="true"> 10-25 </input>
+                            <input type="radio" name="age" value="1" checked="true"> 10-25 </input>
                         </div>
                         <div class="col-sm-3"></div>
                         <div class="col-sm-9">
@@ -104,38 +104,75 @@
                     </div>
                     <!-- /.age -->
 
+                    <!-- education -->
+                    <div class="form-group">
+                        <label for="education" class="col-sm-3 control-label">ระดับการศึกษา</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" name="education">
+                                <option value="">============== โปรดระบุ ==============</option>
+                                <option value="1">ต่ำกว่าปริญญาตรี</option>
+                                <option value="2">ปริญญาตรี</option>
+                                <option value="3">ปริญญาโท</option>
+                                <option value="4">ปริญญาเอก</option>
+                                <option value="5">อื่นๆ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.education -->
+
                     <!-- faculty -->
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">ชื่อคณะที่กำลังศีกษาหรือเคยเรียนอยู่</label>
+                        <label for="faculty" class="col-sm-3 control-label">ชื่อคณะที่กำลังศีกษาหรือเคยเรียนอยู่</label>
                         <div class="col-sm-9">
-                        <select class="form-control" name="faculty">
-                            <option value="1">ครุศาสตร์</option>
-                            <option value="2">จิตวิทยา</option>
-                            <option value="3">ทันตแพทยศาสตร์</option>
-                            <option value="4">นิติศาสตร์</option>
-                            <option value="5">นิเทศศาสตร์</option>
-                            <option value="6">พยาบาลศาสตร์</option>
-                            <option value="7">พาณิชยศาสตร์และการบัญชี</option>
-                            <option value="8">แพทยศาสตร์</option>
-                            <option value="9">เภสัชศาสตร์</option>
-                            <option value="10">รัฐศาสตร์</option>
-                            <option value="11">วิทยาศาสตร์</option>
-                            <option value="12">วิศวกรรมศาสตร์</option>
-                            <option value="13">ศิลปกรรมศาสตร์</option>
-                            <option value="14">เศรษฐศาสตร์</option>
-                            <option value="15">สถาปัตยกรรมศาสตร์</option>
-                            <option value="16">สหเวชศาสตร์</option>
-                            <option value="17">สัตวแพทยศาสตร์</option>
-                        </select>
+                            <select class="form-control" name="faculty">
+                                <option value="">============== โปรดระบุ ==============</option>
+                                <option value="1">ครุศาสตร์</option>
+                                <option value="2">จิตวิทยา</option>
+                                <option value="3">ทันตแพทยศาสตร์</option>
+                                <option value="4">นิติศาสตร์</option>
+                                <option value="5">นิเทศศาสตร์</option>
+                                <option value="6">พยาบาลศาสตร์</option>
+                                <option value="7">พาณิชยศาสตร์และการบัญชี</option>
+                                <option value="8">แพทยศาสตร์</option>
+                                <option value="9">เภสัชศาสตร์</option>
+                                <option value="10">รัฐศาสตร์</option>
+                                <option value="11">วิทยาศาสตร์</option>
+                                <option value="12">วิศวกรรมศาสตร์</option>
+                                <option value="13">ศิลปกรรมศาสตร์</option>
+                                <option value="14">เศรษฐศาสตร์</option>
+                                <option value="15">สถาปัตยกรรมศาสตร์</option>
+                                <option value="16">สหเวชศาสตร์</option>
+                                <option value="17">สัตวแพทยศาสตร์</option>
+                                <option value="18">อื่นๆ</option>
+                            </select>
                         </div>
                     </div>
                     <!-- /.faculty -->
+
+                    <!-- occupation -->
+                    <div class="form-group">
+                        <label for="occupation" class="col-sm-3 control-label">อาชีพ</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" name="occupation">
+                                <option value="">============== โปรดระบุ ==============</option>
+                                <option value="1">นักเรียน/นักศึกษา</option>
+                                <option value="2">ค้าขาย/ธุรกิจส่วนตัว</option>
+                                <option value="3">รับจ้าง</option>
+                                <option value="4">พนักงานบริษัท</option>
+                                <option value="5">พนักงานรัฐวิสาหกิจ</option>
+                                <option value="6">ข้าราชการ</option>
+                                <option value="7">ว่างงาน/พ่อบ้าน/แม่บ้าน/เกษียณอายุ</option>
+                                <option value="8">อื่นๆ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.occupation -->
 
                     <!-- favorite color -->
                     <div class="form-group">
                         <label for="favoriteColor" class="col-sm-3 control-label">รูปแบบที่ชอบ</label>
                         <div class="col-sm-9">
-                        <input id="colorGroup1" type="radio" name="favoriteColor" value="#FF0000,#00FF00"></input>
+                            <input id="colorGroup1" type="radio" name="favoriteColor" value="#FF0000,#00FF00"></input>
                         </div>
                         <div class="col-sm-3"></div>
                         <div class="col-sm-9">
