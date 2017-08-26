@@ -67,6 +67,32 @@ CREATE TABLE IF NOT EXISTS `fl_alphabets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
+-- Dumping structure for table captcha_thesis.ob
+CREATE TABLE IF NOT EXISTS `ob` (
+  `id` varchar(20) NOT NULL,
+  `word_index` int(11) NOT NULL,
+  `wording` varchar(50) NOT NULL,
+  `correct` int(1) DEFAULT NULL COMMENT '1=true, 2=false',
+  `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`,`word_index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
+-- Dumping structure for table captcha_thesis.ob_alphabets
+CREATE TABLE IF NOT EXISTS `ob_alphabets` (
+  `id` varchar(20) NOT NULL,
+  `char_index` int(11) NOT NULL,
+  `alphabet` char(1) NOT NULL,
+  `key_code` int(11) NOT NULL,
+  `key_press` varchar(20) DEFAULT NULL,
+  `key_down` varchar(20) DEFAULT NULL,
+  `key_up` varchar(20) DEFAULT NULL,
+  `correct` int(1) DEFAULT NULL COMMENT '1=true, 2=false',
+  `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`,`char_index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
 -- Dumping structure for table captcha_thesis.rd
 CREATE TABLE IF NOT EXISTS `rd` (
   `id` varchar(20) NOT NULL,
@@ -122,6 +148,7 @@ CREATE TABLE IF NOT EXISTS `user_information` (
 CREATE TABLE IF NOT EXISTS `user_key` (
   `id` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `opacity` decimal(5,3) DEFAULT NULL,
   `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
