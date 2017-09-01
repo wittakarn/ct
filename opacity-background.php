@@ -23,7 +23,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/jquery-ui.css" rel="stylesheet">
-    <link href="css/display-sentense.css" rel="stylesheet">
+    <link href="css/opacity-background.css" rel="stylesheet">
     </style>
 </head>
 
@@ -35,6 +35,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <p id="wording">
+                        <span class="overlay"></span>
                         <?php
                             if(isset($_REQUEST['uuid'])){
                                 $uuid = $_REQUEST['uuid'];
@@ -48,7 +49,7 @@
                                 $words = WordsGenerator::colorWordsGenerator($conn, $uuid);
                                 $sentense = implode(" ", $words);
 
-                                echo "<span class='color-word' style='color:white;background:rgba(0, 0, 0, 0)'>".$sentense."</span>";
+                                echo "<span class='color-word' style='color:white;opacity:0;'>".$sentense."</span>";
                             }
                         ?>
                     </p>

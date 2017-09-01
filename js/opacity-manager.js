@@ -8,13 +8,15 @@ var OpacityManager = (function () {
                 range: "min",
                 max: 1,
                 value: 0,
-                step: 0.005,
+                step: 0.15,
                 slide: updateOpacity,
             });
         },
         updateOpacity = function (event, ui) {
-            $("#wording").css('background-color', 'rgba(0,0,0,' + ui.value + ')')
-            $("#opacityBackground").val(ui.value);
+            var opacity = ui.value;
+            $(".color-word").css('opacity', opacity)
+            $(".overlay").css('opacity', 1 - opacity)
+            $("#opacityBackground").val(opacity);
         };
 
         return {
