@@ -21,6 +21,15 @@ class UserKey
 		$stmt->execute();
 	}
 
+	public static function updateOpacity($conn, $uuid, $opacity){
+		$query = "UPDATE user_key SET opacity=:opacity WHERE id = :id ";
+		$stmt = $conn->prepare($query);
+		$stmt->bindParam(":id", $uuid, PDO::PARAM_STR);
+		$stmt->bindParam(":opacity", $opacity, PDO::PARAM_STR);
+
+		$stmt->execute();
+	}
+
 	public static function get($conn, $uuid){
 		$query = "SELECT * FROM user_key WHERE id = :id ";
 		$stmt = $conn->prepare($query); 

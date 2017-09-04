@@ -23,6 +23,15 @@ submitForm.validate({
             required: true,
             minlength: 1,
         },
+        "education": {
+            required: true,
+        },
+        "faculty": {
+            required: true,
+        },
+        "occupation": {
+            required: true,
+        },
         "favoriteColor": {
             required: true,
         }
@@ -43,6 +52,9 @@ submitForm.validate({
             equalTo: "ยืนยันรหัสผ่าน ต้องตรงกับรหัสผ่านที่ระบุด้านบน"
         },
         "phone": "ข้อมูลต้องระบุ",
+        "education": "ข้อมูลต้องระบุ",
+        "faculty": "ข้อมูลต้องระบุ",
+        "occupation": "ข้อมูลต้องระบุ",
         "favoriteColor": {
             required: "ข้อมูลต้องระบุ",
         }

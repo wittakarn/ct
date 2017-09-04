@@ -3,8 +3,9 @@
     ini_set('display_errors', 1);
     require_once("config.php");
     require_once("connection.php");
-    require_once(DOCUMENT_ROOT."class/Cw.php");
-    require_once(DOCUMENT_ROOT."class/CwAlphabets.php");
+    require_once(DOCUMENT_ROOT."class/UserKey.php");
+    require_once(DOCUMENT_ROOT."class/Ob.php");
+    require_once(DOCUMENT_ROOT."class/ObAlphabets.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +20,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>กรุณารอสักครู่</h1>
-                <form id="form-submit" class="form-inline" action="opacity-background.php" method="get">
+                <form id="form-submit" class="form-inline" action="thankyou.php" method="get">
                     <?php
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                             $conn = DataBaseConnection::createConnect();
@@ -29,18 +30,20 @@
 
                                     $conn->beginTransaction();
 
+                                    UserKey::updateOpacity($conn, $_REQUEST['uuid'], $_REQUEST['opacity']);
+
                                     $words = explode(" ", $_REQUEST['sentense']);
-                                    $cwIndex = 1;
+                                    $obIndex = 1;
                                     foreach($words as $word) {
-                                        $cw = new Cw($conn, $_REQUEST);
-                                        $cw->create($_REQUEST['uuid'], $cwIndex++, $word);
+                                        $ob = new Ob($conn, $_REQUEST);
+                                        $ob->create($_REQUEST['uuid'], $obIndex++, $word);
                                     }
 
                                     $jsonObj = json_decode($_REQUEST['json_string'], true);
-                                    $cwAlphabetIndex = 1;
+                                    $obAlphabetIndex = 1;
                                     foreach($jsonObj as $item) {
-                                        $cwAlphabets = new CwAlphabets($conn, $item);
-                                        $cwAlphabets->create($_REQUEST['uuid'], $cwAlphabetIndex++);
+                                        $obAlphabets = new ObAlphabets($conn, $item);
+                                        $obAlphabets->create($_REQUEST['uuid'], $obAlphabetIndex++);
                                     }
                                     
                                     $conn->commit();
