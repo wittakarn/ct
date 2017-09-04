@@ -53,7 +53,9 @@
                             }
                         ?>
                     </p>
-                    <div id="opacitySlider"></div>
+                    <div id="opacitySlider">
+                        <div id="custom-handle" class="ui-slider-handle"></div>
+                    </div>
                 </div>
             </div>
         </div>

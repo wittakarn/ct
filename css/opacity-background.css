@@ -15,3 +15,17 @@
 #wording .color-word {
     position: absolute;
 }
+
+#custom-handle {
+    display: block;
+    top: -8px;
+    width: 40px;
+    height: 25px;
+    text-align: center;
+    background-image: radial-gradient( circle, yellow, #f06d06);
+}
+
+#custom-handle.ui-state-active {
+    color: black;
+    font-weight: bold;
+}
