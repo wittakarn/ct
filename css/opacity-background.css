@@ -16,16 +16,21 @@
     position: absolute;
 }
 
-#custom-handle {
+#opacity-slider .ui-slider-handle {
     display: block;
-    top: -8px;
-    width: 40px;
-    height: 25px;
-    text-align: center;
+    border: 2px solid #f06d06;
+    border-radius: 50%;
     background-image: radial-gradient( circle, yellow, #f06d06);
 }
 
-#custom-handle.ui-state-active {
-    color: black;
-    font-weight: bold;
+#opacity-slider{
+    margin-bottom: 40px;
+}
+
+#opacity-slider label {
+    position: absolute;
+    width: 20px;
+    margin-left: -10px;
+    text-align: center;
+    margin-top: 20px;
 }
