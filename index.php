@@ -24,7 +24,7 @@
             <label for="password" class="sr-only">Password</label>
             <input type="password" name="password" class="form-control" placeholder="Password" required>
             <button class="btn btn-lg btn-primary btn-block" type="submit">เข้าสู่ระบบ</button>
-            <a href="questionnaire.php" class="btn btn-lg btn-info btn-block" role="button">สร้างบัญชีผู้ใช้</a>
+            <a href="mobile/questionnaire.php" class="btn btn-lg btn-info btn-block" role="button">สร้างบัญชีผู้ใช้</a>
         </form>
     </div>
 

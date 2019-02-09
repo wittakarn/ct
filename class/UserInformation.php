@@ -27,6 +27,22 @@ class UserInformation
 		$stmt->execute();
 	}
 
+	public function createInfoForMobile(){
+		$params = $this->requests;
+		$db = $this->dbh;
+		$query = "INSERT INTO user_information(email, name, phone, gender, age, education, faculty, occupation, favorite_color) VALUES 
+												(:email, :name, :phone, :gender, :age, :education, :faculty, :occupation, :favorite_color)";
+		$stmt = $db->prepare($query);
+		$stmt->bindParam(":email", $params['email'], PDO::PARAM_STR); 
+		$stmt->bindParam(":name", $params['name'], PDO::PARAM_STR);
+		$stmt->bindParam(":phone", $params['phone'], PDO::PARAM_STR);
+		$stmt->bindParam(":gender", $params['gender'], PDO::PARAM_INT);
+		$stmt->bindParam(":age", $params['age'], PDO::PARAM_INT);
+		$stmt->bindParam(":education", $params['education'], PDO::PARAM_INT);
+		$stmt->bindParam(":occupation", $params['occupation'], PDO::PARAM_INT);
+		$stmt->execute();
+	}
+
 	public static function get($conn, $email){
 		$query = "SELECT * FROM user_information WHERE email = :email ";
 		$stmt = $conn->prepare($query); 
