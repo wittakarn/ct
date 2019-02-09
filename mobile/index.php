@@ -1,3 +1,8 @@
+<?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    require_once("../config.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,13 +16,13 @@
     <title>เข้าสู่ระบบ</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <link href="<?php echo ROOT; ?>css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?php echo ROOT; ?>css/index.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="container">
-        <form id="signInForm" class="form-signin" action="submit-signin.php" method="post">
+        <form id="signInForm" class="form-signin" action="<?php echo ROOT; ?>submit-signin.php" method="post">
             <h2 class="form-signin-heading">เข้าสู่ระบบ</h2>
             <label for="email" class="sr-only">Email</label>
             <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
@@ -29,14 +34,14 @@
     </div>
 
     <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
+    <script src="<?php echo ROOT; ?>js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?php echo ROOT; ?>js/bootstrap.min.js"></script>
 
-    <script src="js/jquery.validate.js"></script>
+    <script src="<?php echo ROOT; ?>js/jquery.validate.js"></script>
 
-    <script src="js/index.js"></script>
+    <script src="<?php echo ROOT; ?>js/index.js"></script>
 
 </body>
 

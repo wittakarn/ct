@@ -1,8 +1,8 @@
 <?php
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
-    require_once("config.php");
-    require_once("connection.php");
+    require_once("../config.php");
+    require_once("../connection.php");
     require_once(DOCUMENT_ROOT."class/UserInformation.php");
     require_once(DOCUMENT_ROOT."class/User.php");
     require_once(DOCUMENT_ROOT."class/UserKey.php");
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>กรุณารอสักครู่</h1>
-                <form id="form-submit" class="form-inline" action="17words.php" method="get">
+                <form id="form-submit" class="form-inline" action="<?php echo ROOT; ?>17words.php" method="get">
                     <?php
                         $createUserFailed = false;
                         $uuid = uniqid();
@@ -67,7 +67,7 @@
 
 </html>
 <!-- jQuery Version 1.11.1 -->
-<script src="js/jquery.js"></script>
+<script src="<?php echo ROOT; ?>js/jquery.js"></script>
 
 <script type="text/javascript">
     var form = $("#form-submit");

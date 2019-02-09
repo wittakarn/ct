@@ -30,8 +30,8 @@ class UserInformation
 	public function createInfoForMobile(){
 		$params = $this->requests;
 		$db = $this->dbh;
-		$query = "INSERT INTO user_information(email, name, phone, gender, age, education, faculty, occupation, favorite_color) VALUES 
-												(:email, :name, :phone, :gender, :age, :education, :faculty, :occupation, :favorite_color)";
+		$query = "INSERT INTO user_information(email, name, phone, gender, age, education, occupation) VALUES 
+												(:email, :name, :phone, :gender, :age, :education, :occupation)";
 		$stmt = $db->prepare($query);
 		$stmt->bindParam(":email", $params['email'], PDO::PARAM_STR); 
 		$stmt->bindParam(":name", $params['name'], PDO::PARAM_STR);

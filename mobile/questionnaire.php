@@ -1,3 +1,8 @@
+<?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    require_once("../config.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +17,8 @@
     <title>ข้อมูลทั่วไป</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/questionnaire.css" rel="stylesheet">
+    <link href="<?php echo ROOT; ?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo ROOT; ?>css/questionnaire.css" rel="stylesheet">
 </head>
 
 <body>
@@ -160,14 +165,14 @@
     <!-- /.container -->
 
     <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
+    <script src="<?php echo ROOT; ?>js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?php echo ROOT; ?>js/bootstrap.min.js"></script>
 
-    <script src="js/jquery.validate.js"></script>
+    <script src="<?php echo ROOT; ?>js/jquery.validate.js"></script>
 
-    <script src="js/questionnaire.js"></script>
+    <script src="<?php echo ROOT; ?>js/questionnaire.js"></script>
 
 </body>
 
