@@ -1,25 +1,32 @@
 var OpacityManager = (function () {
-    var handleElement = $("#custom-handle"),
+    var sliderElement = $("#opacity-slider"),
         init = function () {
             bindEvent();
         },
         bindEvent = function () {
-            $("#opacitySlider").slider({
+            sliderElement.slider({
                 orientation: "horizontal",
                 range: "min",
                 max: 1,
+                min: 0,
                 value: 0,
                 step: 0.15,
                 slide: updateOpacity,
+                create: displayScale,
             });
-            handleElement.text(0);
+        }
+        displayScale = function(){
+            var scaleWidth = $(".ui-slider").width() / 6;
+            for (var i = 0; i < 7; i++) {
+                var el = $('<label>'+ i +'</label>').css('left',(scaleWidth * i)+'px');
+                sliderElement.append(el);
+            }
         },
         updateOpacity = function (event, ui) {
             var opacity = ui.value;
             $(".color-word").css('opacity', opacity)
             $(".overlay").css('opacity', 1 - opacity)
             $("#opacityBackground").val(opacity);
-            handleElement.text(opacity);
         };
 
     return {
