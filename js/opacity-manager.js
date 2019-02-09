@@ -18,7 +18,7 @@ var OpacityManager = (function () {
         displayScale = function(){
             var scaleWidth = $(".ui-slider").width() / 6;
             for (var i = 0; i < 7; i++) {
-                var el = $('<label>'+(i * 15) / 100+'</label>').css('left',(scaleWidth * i)+'px');
+                var el = $('<label>'+ i +'</label>').css('left',(scaleWidth * i)+'px');
                 sliderElement.append(el);
             }
         },
