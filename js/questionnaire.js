@@ -64,9 +64,9 @@ submitForm.validate({
         // Add the `help-block` class to the error element
         error.addClass("help-block");
         if (element.prop("type") === "radio") {
-            try{
+            try {
                 error.insertAfter(element.parent("div").parent("div").children().children().last());
-            }catch(err){
+            } catch (err) {
                 error.insertAfter(element);
             }
         } else {

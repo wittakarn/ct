@@ -1,0 +1,19 @@
+.ui-keyboard {
+	border-radius: 0;
+	left: 0;
+	top: auto;
+	bottom: 0;
+	position: fixed;
+	width: 100%;
+}
+
+#keyboard {
+	width: 100%;
+	font-size: 24px;
+}
+
+#pressure-scale {
+	width: 200px;
+	height: 20px;
+	background-color: #0080FF;
+}

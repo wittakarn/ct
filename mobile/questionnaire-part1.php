@@ -28,12 +28,12 @@
         <hr/>
         <div class="row">
             <div class="col-md-8">
-                <form id="userInfoForm" action="submit-questionnaire.php" method="post" class="form-horizontal" role="form">
+                <form id="userInfoForm" action="questionnaire-part2.php" method="post" class="form-horizontal" role="form">
 
                     <!-- name -->
                     <div class="form-group">
-                        <label for="name" class="col-sm-3 control-label">ชื่อ-นามสกุล</label>
-                        <div class="col-sm-9">
+                        <label for="name" class="col-xs-3 control-label">ชื่อ-นามสกุล</label>
+                        <div class="col-xs-9">
                             <input type="text" name="name" class="form-control" placeholder="Name" autofocus="true">
                         </div>
                     </div>
@@ -41,48 +41,21 @@
 
                     <!-- email -->
                     <div class="form-group">
-                        <label for="email" class="col-sm-3 control-label">Email</label>
-                        <div class="col-sm-9">
+                        <label for="email" class="col-xs-3 control-label">Email</label>
+                        <div class="col-xs-9">
                             <input type="text" name="email" class="form-control" placeholder="Email">
                         </div>
                     </div>
                     <!-- /.email -->
 
-                    <!-- password -->
-                    <div class="form-group">
-                        <label for="password" class="col-sm-3 control-label">รหัสผ่าน</label>
-                        <div class="col-sm-9">
-                            <input type="password" id="ps" name="password" class="form-control" placeholder="Password">
-                        </div>
-                    </div>
-                    <!-- /.password -->
-
-                    <!-- confirm password -->
-                    <div class="form-group">
-                        <label for="confirm_password" class="col-sm-3 control-label">ยืนยันรหัสผ่าน</label>
-                        <div class="col-sm-9">
-                            <input type="password" name="confirm_password" class="form-control" placeholder="Confirm password">
-                        </div>
-                    </div>
-                    <!-- /.confirm password -->
-
-                    <!-- phone -->
-                    <div class="form-group">
-                        <label for="phone" class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
-                        <div class="col-sm-9">
-                            <input type="text" name="phone" class="form-control" placeholder="Telephone">
-                        </div>
-                    </div>
-                    <!-- /.phone -->
-
                     <!-- gender -->
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">เพศ</label>
-                        <div class="col-sm-9">
+                        <label class="col-xs-3 control-label">เพศ</label>
+                        <div class="col-xs-9">
                             <input type="radio" name="gender" value="1" checked="true"> ชาย </input>
                         </div>
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-9">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-9">
                             <input type="radio" name="gender" value="2"> หญิง </input>
                         </div>
                     </div>
@@ -90,20 +63,20 @@
 
                     <!-- age -->
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">อายุ</label>
-                        <div class="col-sm-9">
+                        <label class="col-xs-3 control-label">อายุ</label>
+                        <div class="col-xs-9">
                             <input type="radio" name="age" value="1" checked="true"> 10-25 </input>
                         </div>
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-9">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-9">
                             <input type="radio" name="age" value="2"> 26-40 </input>
                         </div>
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-9">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-9">
                             <input type="radio" name="age" value="3"> 41-60 </input>
                         </div>
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-9">
+                        <div class="col-xs-3"></div>
+                        <div class="col-xs-9">
                             <input type="radio" name="age" value="4"> มากกว่า 60 </input>
                         </div>
                     </div>
@@ -111,10 +84,10 @@
 
                     <!-- education -->
                     <div class="form-group">
-                        <label for="education" class="col-sm-3 control-label">ระดับการศึกษา</label>
-                        <div class="col-sm-9">
+                        <label for="education" class="col-xs-3 control-label">ระดับการศึกษา</label>
+                        <div class="col-xs-9">
                             <select class="form-control" name="education">
-                                <option value="">============== โปรดระบุ ==============</option>
+                                <option value="">======= โปรดระบุ =======</option>
                                 <option value="1">ต่ำกว่าปริญญาตรี</option>
                                 <option value="2">ปริญญาตรี</option>
                                 <option value="3">ปริญญาโท</option>
@@ -127,10 +100,10 @@
 
                     <!-- occupation -->
                     <div class="form-group">
-                        <label for="occupation" class="col-sm-3 control-label">อาชีพ</label>
-                        <div class="col-sm-9">
+                        <label for="occupation" class="col-xs-3 control-label">อาชีพ</label>
+                        <div class="col-xs-9">
                             <select class="form-control" name="occupation">
-                                <option value="">============== โปรดระบุ ==============</option>
+                                <option value="">======= โปรดระบุ =======</option>
                                 <option value="1">นักเรียน/นักศึกษา</option>
                                 <option value="2">ค้าขาย/ธุรกิจส่วนตัว</option>
                                 <option value="3">รับจ้าง</option>
@@ -145,9 +118,15 @@
                     <!-- /.occupation -->
 
                     <!-- button -->
-                    <div class="col-sm-offset-2 col-sm-9">
-                        <button type="reset" class="btn btn-default">เริ่มใหม่</button>
-                        <button type="submit" class="btn btn-default">ยืนยัน</button>
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <button type="reset" class="form-control btn btn-default">เริ่มใหม่</button>
+                        </div>
+                        <div class="col-xs-2">
+                        </div>
+                        <div class="col-xs-5">
+                            <button type="submit" class="form-control btn btn-default">ยืนยัน</button>
+                        </div>
                     </div>
                     <!-- /.button -->
 
