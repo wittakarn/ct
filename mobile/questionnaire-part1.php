@@ -28,7 +28,7 @@
         <hr/>
         <div class="row">
             <div class="col-md-8">
-                <form id="userInfoForm" action="questionnaire-part2.php" method="post" class="form-horizontal" role="form">
+                <form id="userInfoForm" action="submit-questionnaire-part1.php" method="post" class="form-horizontal" role="form">
 
                     <!-- name -->
                     <div class="form-group">

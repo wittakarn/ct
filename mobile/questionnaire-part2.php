@@ -30,22 +30,25 @@
 <body>
 
     <h1>เบอร์โทรศัพท์</h1>
-    <form id="userInfoForm" action="submit-questionnaire.php" method="post" role="form">
+    <form id="userInfoForm" action="submit-questionnaire-part2.php" method="post" role="form">
 
-        <input id="keyboard" type="text">
+        <input id="keyboard" type="text" name="phone">
         <!-- button -->
         <div class="row">
             <div class="col-xs-5">
-                <button type="reset" class="form-control btn btn-default">เริ่มใหม่</button>
+                <button type="reset" class="form-control btn btn-default" onclick="location.reload();">เริ่มใหม่</button>
             </div>
             <div class="col-xs-2">
             </div>
             <div class="col-xs-5">
-                <button type="submit" class="form-control btn btn-default">ยืนยัน</button>
+                <button id="submitButton" type="button" class="form-control btn btn-default">ยืนยัน</button>
             </div>
         </div>
         <!-- /.button -->
         <div id="pressure-scale">0</div>
+        <input type="hidden" name="uuid" value="<?php echo $_REQUEST['uuid']?>" />
+        <input type="hidden" name="email" value="<?php echo $_REQUEST['email']?>" />
+        <input type="hidden" id="eventInput" name="eventData" />
     </form>
 
     <script src="<?php echo ROOT; ?>js/jquery.js"></script>
@@ -54,6 +57,7 @@
     <script src="<?php echo ROOT; ?>js/jquery.keyboard.js"></script>
     <script src="<?php echo ROOT; ?>js/ct-keyboard.js"></script>
     <script src="<?php echo ROOT; ?>js/ct-pressure.js"></script>
+    <script src="<?php echo ROOT; ?>js/questionnaire-part2.js"></script>
     <script>
         var typeIndex = 0;
         var pressure = [];

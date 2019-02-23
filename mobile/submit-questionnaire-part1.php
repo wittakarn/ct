@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>กรุณารอสักครู่</h1>
-                <form id="form-submit" class="form-inline" action="<?php echo ROOT; ?>17words.php" method="get">
+                <form id="form-submit" class="form-inline" action="questionnaire-part2.php" method="get">
                     <?php
                         $createUserFailed = false;
                         $uuid = uniqid();
@@ -59,6 +59,7 @@
                         }
                     ?>
                     <input type="hidden" name="uuid" value="<?php echo $uuid?>" />
+                    <input type="hidden" name="email" value="<?php echo $_REQUEST['email']?>" />
                 </form>
             </div>
         </div>
