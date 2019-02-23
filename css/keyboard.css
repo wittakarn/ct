@@ -23,8 +23,9 @@
 
 .ui-keyboard-button {
 	min-height: 4em;
-    min-width: 3.3em;
+    min-width: 3.4em;
 	margin: .12em;
+	padding: 0;
 	cursor: pointer;
 	overflow: hidden;
 	line-height: 2em;
@@ -43,7 +44,8 @@
 	margin: 0;
 	white-space: nowrap;
 	display: inline-block;
-	font-size: 2em;
+	font-size: 2.4em;
+	line-height: 1em;
 }
 .ui-keyboard-bksp, 
 .ui-keyboard-shift, 

@@ -7,6 +7,16 @@
 	width: 100%;
 }
 
+.ui-keyboard-widekey {
+	padding: 0 0.5em;
+}
+
+.ui-keyboard-widekey span,
+.ui-keyboard-bksp span,
+.ui-keyboard-shift span {
+	font-size: 2em;
+}
+
 #keyboard {
 	width: 100%;
 	font-size: 24px;

@@ -41,11 +41,6 @@ $(function () {
         },
         visible: function (event, keyboard, el) {
             init();
-        },
-        change: function (event, keyboard, el) {
-            console.log('> This change callback is called on every user interaction');
-            console.log('  A `keyboardChange` event was also triggered on the original input');
-            console.log('  The value is now ' + keyboard.$preview.val());
         }
     });
 });

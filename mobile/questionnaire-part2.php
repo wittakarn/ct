@@ -55,6 +55,8 @@
     <script src="<?php echo ROOT; ?>js/ct-keyboard.js"></script>
     <script src="<?php echo ROOT; ?>js/ct-pressure.js"></script>
     <script>
+        var typeIndex = 0;
+        var pressure = [];
         function init(){
             $('.ui-keyboard-button').pressure(keyboardButton);
         }
