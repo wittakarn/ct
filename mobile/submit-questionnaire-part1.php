@@ -29,29 +29,15 @@
                             $conn = DataBaseConnection::createConnect();
                             
                             try{
-                                if(isset($_REQUEST['name'])){
-                                    $duplicateUser = User::get($conn, $_REQUEST['email']);
-                                    if($duplicateUser == null){
-                                        $conn->beginTransaction();
-                                        
-                                        $userInfo = new UserInformation($conn, $_REQUEST);
-                                        $userInfo->createInfoForMobile($uuid);
-    
-                                        $user = new User($conn, $_REQUEST);
-                                        $user->create($uuid);
-
-                                        $userKey = new UserKey($conn, $_REQUEST);
-                                        $userKey->create($uuid);
-                                        
-                                        $conn->commit();
-                                    }else{
-                                        echo "<h2>ในระบบมี Email ที่ท่านระบุแล้ว กรุณาใช้ Email อื่น</h2>";
-                                    }
+                                if(isset($_REQUEST['age'])){
+                                    $conn->beginTransaction();
+                                    
+                                    $userInfo = new UserInformation($conn, $_REQUEST);
+                                    $userInfo->createInfoForMobile($uuid);
+                                    
+                                    $conn->commit();
                                 }
                             } catch (PDOException $e) {
-                                if($duplicateUser == null){
-                                    $conn->rollBack();
-                                }
                                 $createUserFailed = true;
                                 echo "Failed: " . $e->getMessage();
                             }
@@ -59,7 +45,6 @@
                         }
                     ?>
                     <input type="hidden" name="uuid" value="<?php echo $uuid?>" />
-                    <input type="hidden" name="email" value="<?php echo $_REQUEST['email']?>" />
                 </form>
             </div>
         </div>
@@ -73,7 +58,7 @@
 <script type="text/javascript">
     var form = $("#form-submit");
     <?php
-        if($duplicateUser != null || $createUserFailed){
+        if($createUserFailed){
             echo "form.attr('action', 'questionnaire.php');";
         }
     ?>

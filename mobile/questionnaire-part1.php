@@ -29,25 +29,6 @@
         <div class="row">
             <div class="col-md-8">
                 <form id="userInfoForm" action="submit-questionnaire-part1.php" method="post" class="form-horizontal" role="form">
-
-                    <!-- name -->
-                    <div class="form-group">
-                        <label for="name" class="col-xs-3 control-label">ชื่อ-นามสกุล</label>
-                        <div class="col-xs-9">
-                            <input type="text" name="name" class="form-control" placeholder="Name" autofocus="true">
-                        </div>
-                    </div>
-                    <!-- /.name -->
-
-                    <!-- email -->
-                    <div class="form-group">
-                        <label for="email" class="col-xs-3 control-label">Email</label>
-                        <div class="col-xs-9">
-                            <input type="text" name="email" class="form-control" placeholder="Email">
-                        </div>
-                    </div>
-                    <!-- /.email -->
-
                     <!-- gender -->
                     <div class="form-group">
                         <label class="col-xs-3 control-label">เพศ</label>

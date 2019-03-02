@@ -17,10 +17,10 @@ class Phone
 		$arraySize = sizeof($array);
 		for ($x = 0; $x < $arraySize; $x++) {
 			$index = $x + 1;
-			$query = "INSERT INTO phone(email, idx, raw_data, key_down, key_up, offset_x, offset_y, page_x, page_y, pressure) VALUES 
-												(:email, :idx, :raw_data, :key_down, :key_up, :offset_x, :offset_y, :page_x, :page_y, :pressure)";
+			$query = "INSERT INTO phone(id, idx, raw_data, key_down, key_up, offset_x, offset_y, page_x, page_y, pressure) VALUES 
+												(:id, :idx, :raw_data, :key_down, :key_up, :offset_x, :offset_y, :page_x, :page_y, :pressure)";
 			$stmt = $db->prepare($query);
-			$stmt->bindParam(":email", $params['email'], PDO::PARAM_STR); 
+			$stmt->bindParam(":id", $params['uuid'], PDO::PARAM_STR); 
 			$stmt->bindValue(":idx", $index, PDO::PARAM_INT);
 			$stmt->bindParam(":raw_data", $array[$x]['value'], PDO::PARAM_STR);
 			$stmt->bindParam(":key_down", $array[$x]['keyDown'], PDO::PARAM_STR);

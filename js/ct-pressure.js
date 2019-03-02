@@ -6,8 +6,8 @@ var keyboardButton = {
         pressure = pressure.concat({
             value: $(this).attr('data-value'),
             keyDown: timestamp,
-            offsetX: new Number(event.offsetX).toFixed(2),
-            offsetY: new Number(event.offsetY).toFixed(2),
+            offsetX: new Number(event.layerX).toFixed(2),
+            offsetY: new Number(event.layerY).toFixed(2),
             pageX: new Number(event.pageX).toFixed(2),
             pageY: new Number(event.pageY).toFixed(2)
         });

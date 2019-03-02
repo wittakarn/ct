@@ -47,7 +47,6 @@
         <!-- /.button -->
         <div id="pressure-scale">0</div>
         <input type="hidden" name="uuid" value="<?php echo $_REQUEST['uuid']?>" />
-        <input type="hidden" name="email" value="<?php echo $_REQUEST['email']?>" />
         <input type="hidden" id="eventInput" name="eventData" />
     </form>
 

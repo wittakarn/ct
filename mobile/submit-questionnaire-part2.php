@@ -25,10 +25,10 @@
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                             $conn = DataBaseConnection::createConnect();
                             
-                                if(isset($_REQUEST['email'])){
+                                if(isset($_REQUEST['uuid'])){
                                     $conn->beginTransaction();
                                     
-                                    UserInformation::updatePhone($conn, $_REQUEST['email'], $_REQUEST['phone']);
+                                    UserInformation::updatePhone($conn, $_REQUEST['uuid'], $_REQUEST['phone']);
                                     $phone = new Phone($conn, $_REQUEST);
                                     $phone->create();
                                     
@@ -49,13 +49,8 @@
 <script src="<?php echo ROOT; ?>js/jquery.js"></script>
 
 <script type="text/javascript">
-    var form = $("#form-submit");
-    <?php
-        if($duplicateUser != null || $createUserFailed){
-            echo "form.attr('action', 'questionnaire.php');";
-        }
-    ?>
-    setTimeout(function(){
-        form.submit();
-    }, 3000);
+    // var form = $("#form-submit");
+    // setTimeout(function(){
+    //     form.submit();
+    // }, 3000);
 </script>
