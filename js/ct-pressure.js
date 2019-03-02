@@ -9,7 +9,7 @@ var keyboardButton = {
             offsetX: new Number(event.layerX).toFixed(2),
             offsetY: new Number(event.layerY).toFixed(2),
             pageX: new Number(event.pageX).toFixed(2),
-            pageY: new Number(event.pageY).toFixed(2)
+            pageY: new Number(event.pageY).toFixed(2),
         });
     },
 
