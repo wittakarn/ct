@@ -4,7 +4,7 @@
     require_once("../config.php");
     require_once("../connection.php");
     require_once(DOCUMENT_ROOT."class/UserInformation.php");
-    require_once(DOCUMENT_ROOT."class/Fullname.php");
+    require_once(DOCUMENT_ROOT."class/Phone.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>กรุณารอสักครู่</h1>
-                <form id="form-submit" class="form-inline" action="questionnaire-part3.php" method="get">
+                <form id="form-submit" class="form-inline" action="questionnaire-part5.php" method="get">
                     <?php
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                             $conn = DataBaseConnection::createConnect();
@@ -28,9 +28,9 @@
                                 if(isset($_REQUEST['uuid'])){
                                     $conn->beginTransaction();
                                     
-                                    UserInformation::updateName($conn, $_REQUEST['uuid'], $_REQUEST['fullname']);
-                                    $fullname = new Fullname($conn, $_REQUEST);
-                                    $fullname->create();
+                                    UserInformation::updatePhone($conn, $_REQUEST['uuid'], $_REQUEST['phone']);
+                                    $phone = new Phone($conn, $_REQUEST);
+                                    $phone->create();
                                     
                                     $conn->commit();
                                 }
@@ -49,8 +49,8 @@
 <script src="<?php echo ROOT; ?>js/jquery.js"></script>
 
 <script type="text/javascript">
-    var form = $("#form-submit");
-    setTimeout(function(){
-        form.submit();
-    }, 3000);
+    // var form = $("#form-submit");
+    // setTimeout(function(){
+    //     form.submit();
+    // }, 3000);
 </script>

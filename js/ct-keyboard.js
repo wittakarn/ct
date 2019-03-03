@@ -40,7 +40,8 @@ $(function () {
             ]
         },
         visible: function (event, keyboard, el) {
-            init();
+            initPressure();
+            initTouch();
         }
     });
 });

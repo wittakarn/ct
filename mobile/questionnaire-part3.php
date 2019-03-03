@@ -29,10 +29,10 @@
 
 <body>
 
-    <h1>ชื่อ-นามสกุล</h1>
-    <form id="userInfoForm" action="submit-questionnaire-part2.php" method="post" role="form">
+    <h1>Email</h1>
+    <form id="userInfoForm" action="submit-questionnaire-part3.php" method="post" role="form">
 
-        <input id="keyboard" type="text" name="fullname">
+        <input id="keyboard" type="text" name="email">
         <!-- button -->
         <div class="row">
             <div class="col-xs-5">
@@ -59,7 +59,7 @@
     <script src="<?php echo ROOT; ?>js/ct-keyboard.js"></script>
     <script src="<?php echo ROOT; ?>js/ct-pressure.js"></script>
     <script src="<?php echo ROOT; ?>js/ct-touch.js"></script>
-    <script src="<?php echo ROOT; ?>js/questionnaire-part2.js"></script>
+    <script src="<?php echo ROOT; ?>js/questionnaire-part3.js"></script>
     <script>
         var typeIndex = 0;
         var touchs = [];

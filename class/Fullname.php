@@ -1,5 +1,5 @@
 <?php
-class Phone
+class Fullname
 {
 	public $requests;
 	public $dbh;
@@ -17,7 +17,7 @@ class Phone
 		$arraySize = sizeof($array);
 		for ($x = 0; $x < $arraySize; $x++) {
 			$index = $x + 1;
-			$query = "INSERT INTO phone(id, 
+			$query = "INSERT INTO fullname(id, 
 									idx, 
 									raw_data, 
 									key_down, 

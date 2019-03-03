@@ -4,7 +4,7 @@
     require_once("../config.php");
     require_once("../connection.php");
     require_once(DOCUMENT_ROOT."class/UserInformation.php");
-    require_once(DOCUMENT_ROOT."class/Fullname.php");
+    require_once(DOCUMENT_ROOT."class/Email.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>กรุณารอสักครู่</h1>
-                <form id="form-submit" class="form-inline" action="questionnaire-part3.php" method="get">
+                <form id="form-submit" class="form-inline" action="questionnaire-part4.php" method="get">
                     <?php
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                             $conn = DataBaseConnection::createConnect();
@@ -28,9 +28,9 @@
                                 if(isset($_REQUEST['uuid'])){
                                     $conn->beginTransaction();
                                     
-                                    UserInformation::updateName($conn, $_REQUEST['uuid'], $_REQUEST['fullname']);
-                                    $fullname = new Fullname($conn, $_REQUEST);
-                                    $fullname->create();
+                                    UserInformation::updateEmail($conn, $_REQUEST['uuid'], $_REQUEST['email']);
+                                    $email = new Email($conn, $_REQUEST);
+                                    $email->create();
                                     
                                     $conn->commit();
                                 }

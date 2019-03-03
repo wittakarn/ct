@@ -36,6 +36,24 @@ class UserInformation
 		$stmt->execute();
 	}
 
+	public static function updateName($conn, $id, $fullname){
+		$query = "UPDATE user_information SET name = :name ";
+		$query .= "WHERE id = :id";
+		$stmt = $conn->prepare($query);
+		$stmt->bindParam(":id", $id, PDO::PARAM_STR); 
+		$stmt->bindParam(":name", $fullname, PDO::PARAM_STR);
+		$stmt->execute();
+	}
+
+	public static function updateEmail($conn, $id, $email){
+		$query = "UPDATE user_information SET email = :email ";
+		$query .= "WHERE id = :id";
+		$stmt = $conn->prepare($query);
+		$stmt->bindParam(":id", $id, PDO::PARAM_STR); 
+		$stmt->bindParam(":email", $email, PDO::PARAM_STR);
+		$stmt->execute();
+	}
+
 	public function createInfoForMobile($uuid){
 		$params = $this->requests;
 		$db = $this->dbh;
