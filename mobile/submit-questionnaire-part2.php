@@ -24,7 +24,6 @@
                     <?php
                         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                             $conn = DataBaseConnection::createConnect();
-                            
                                 if(isset($_REQUEST['uuid'])){
                                     $conn->beginTransaction();
                                     

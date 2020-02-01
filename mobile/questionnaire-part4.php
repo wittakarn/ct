@@ -54,8 +54,8 @@
     <script src="<?php echo ROOT; ?>js/bootstrap.min.js"></script>
     <script src="<?php echo ROOT; ?>js/jquery.pressure.js"></script>
     <script src="<?php echo ROOT; ?>js/jquery.keyboard.js"></script>
-    <script src="<?php echo ROOT; ?>js/gyronorm.complete.min.js"></script>
-    <script src="<?php echo ROOT; ?>js/ct-gyronorm.js"></script>
+    <!--script src="<?php echo ROOT; ?>js/gyronorm.complete.min.js"></script-->
+    <!--script src="<?php echo ROOT; ?>js/ct-gyronorm.js"></script-->
     <script src="<?php echo ROOT; ?>js/ct-keyboard.js"></script>
     <script src="<?php echo ROOT; ?>js/ct-pressure.js"></script>
     <script src="<?php echo ROOT; ?>js/ct-touch.js"></script>

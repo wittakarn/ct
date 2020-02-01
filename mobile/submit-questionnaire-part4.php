@@ -50,7 +50,8 @@
 
 <script type="text/javascript">
     // var form = $("#form-submit");
-    // setTimeout(function(){
-    //     form.submit();
-    // }, 3000);
+    setTimeout(function(){
+        // form.submit();
+        window.location = "<?php echo ROOT; ?>mobile/questionnaire-part1.php";
+    }, 3000);
 </script>
