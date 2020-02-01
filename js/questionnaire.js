@@ -32,6 +32,9 @@ submitForm.validate({
         "occupation": {
             required: true,
         },
+        "posture": {
+            required: true,
+        },
         "favoriteColor": {
             required: true,
         }
@@ -55,6 +58,7 @@ submitForm.validate({
         "education": "ข้อมูลต้องระบุ",
         "faculty": "ข้อมูลต้องระบุ",
         "occupation": "ข้อมูลต้องระบุ",
+        "posture": "ข้อมูลต้องระบุ",
         "favoriteColor": {
             required: "ข้อมูลต้องระบุ",
         }

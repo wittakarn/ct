@@ -98,6 +98,20 @@
                     </div>
                     <!-- /.occupation -->
 
+                    <!-- posture -->
+                    <div class="form-group">
+                        <label for="posture" class="col-xs-3 control-label">ท่าทาง(ขณะทำแบบทำสอบ)</label>
+                        <div class="col-xs-9">
+                            <select class="form-control" name="posture">
+                                <option value="">======= โปรดระบุ =======</option>
+                                <option value="1">นั่ง</option>
+                                <option value="2">ยืน</option>
+                                <option value="3">เดิน</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.posture -->
+
                     <!-- button -->
                     <div class="row">
                         <div class="col-xs-5">

@@ -1,4 +1,7 @@
 <?php
+require_once("../config.php");
+require_once(DOCUMENT_ROOT."class/UserInformation.php");
+
 class Phone
 {
 	public $requests;
@@ -18,6 +21,7 @@ class Phone
 		for ($x = 0; $x < $arraySize; $x++) {
 			$index = $x + 1;
 			$query = "INSERT INTO phone(id, 
+									round,
 									idx, 
 									raw_data, 
 									key_down, 
@@ -42,6 +46,7 @@ class Phone
 									dm_beta, 
 									dm_gamma) VALUES 
 									(:id, 
+									:round,
 									:idx, 
 									:raw_data, 
 									:key_down, 
@@ -67,6 +72,7 @@ class Phone
 									:dm_gamma)";
 			$stmt = $db->prepare($query);
 			$stmt->bindParam(":id", $params['uuid'], PDO::PARAM_STR); 
+			$stmt->bindValue(":round", UserInformation::getRoundCount($db, $params['uuid']) + 1, PDO::PARAM_INT);
 			$stmt->bindValue(":idx", $index, PDO::PARAM_INT);
 			$stmt->bindParam(":raw_data", $array[$x]['value'], PDO::PARAM_STR);
 			$stmt->bindParam(":key_down", $array[$x]['keyDown'], PDO::PARAM_STR);

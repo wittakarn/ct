@@ -59,7 +59,7 @@
     var form = $("#form-submit");
     <?php
         if($createUserFailed){
-            echo "form.attr('action', 'questionnaire.php');";
+            echo "form.attr('action', 'questionnaire-part1.php');";
         }
     ?>
     setTimeout(function(){

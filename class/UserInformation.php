@@ -54,17 +54,38 @@ class UserInformation
 		$stmt->execute();
 	}
 
+	public static function getRoundCount($conn, $id){
+		$query = "SELECT round_count FROM user_information WHERE id = :id ";
+		$stmt = $conn->prepare($query); 
+		$stmt->bindParam(":id", $id, PDO::PARAM_STR); 
+
+		$stmt->execute();
+		$roundCount = $stmt->fetch(PDO::FETCH_ASSOC);
+		return $roundCount['round_count'];
+	}
+
+	public static function updateRoundCount($conn, $id){
+		$query = "UPDATE user_information SET round_count = :roundCount ";
+		$query .= "WHERE id = :id";
+		$stmt = $conn->prepare($query);
+		$stmt->bindParam(":id", $id, PDO::PARAM_STR);
+		$stmt->bindValue(":roundCount", self::getRoundCount($conn, $id) + 1, PDO::PARAM_INT);
+		$stmt->execute();
+	}
+
 	public function createInfoForMobile($uuid){
 		$params = $this->requests;
 		$db = $this->dbh;
-		$query = "INSERT INTO user_information(id, gender, age, education, occupation) VALUES 
-												(:id, :gender, :age, :education, :occupation)";
+		$query = "INSERT INTO user_information(id, gender, age, education, occupation, posture, round_count) VALUES 
+												(:id, :gender, :age, :education, :occupation, :posture, :roundCount)";
 		$stmt = $db->prepare($query);
 		$stmt->bindValue(":id", $uuid, PDO::PARAM_STR); 
 		$stmt->bindParam(":gender", $params['gender'], PDO::PARAM_INT);
 		$stmt->bindParam(":age", $params['age'], PDO::PARAM_INT);
 		$stmt->bindParam(":education", $params['education'], PDO::PARAM_INT);
 		$stmt->bindParam(":occupation", $params['occupation'], PDO::PARAM_INT);
+		$stmt->bindParam(":posture", $params['posture'], PDO::PARAM_INT);
+		$stmt->bindValue(":roundCount", 0, PDO::PARAM_INT);
 		$stmt->execute();
 	}
 

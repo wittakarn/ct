@@ -31,10 +31,11 @@
                                     UserInformation::updatePhone($conn, $_REQUEST['uuid'], $_REQUEST['phone']);
                                     $phone = new Phone($conn, $_REQUEST);
                                     $phone->create();
+
+                                    UserInformation::updateRoundCount($conn, $_REQUEST['uuid']);
                                     
                                     $conn->commit();
                                 }
-                            $conn = null;
                         }
                     ?>
                     <input type="hidden" name="uuid" value="<?php echo $_REQUEST['uuid']; ?>" />
@@ -52,6 +53,15 @@
     // var form = $("#form-submit");
     setTimeout(function(){
         // form.submit();
-        window.location = "<?php echo ROOT; ?>mobile/questionnaire-part1.php";
+        <?php
+            $redirectUrl = ROOT."mobile/questionnaire-part2.php?uuid=".$_REQUEST['uuid'];
+            if(isset($conn)){
+                $roundCount = UserInformation::getRoundCount($conn, $_REQUEST['uuid']);
+                if($roundCount == 10){
+                    $redirectUrl = ROOT."mobile/thank-you.php";
+                }
+            }
+        ?>
+        window.location = "<?php echo $redirectUrl; ?>";
     }, 3000);
 </script>
