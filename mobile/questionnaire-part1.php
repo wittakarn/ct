@@ -146,7 +146,7 @@
 
     <script src="<?php echo ROOT; ?>js/jquery.validate.js"></script>
 
-    <script src="<?php echo ROOT; ?>js/questionnaire.js"></script>
+    <script src="<?php echo ROOT; ?>js/questionnaire.js?101"></script>
 
 </body>
 
