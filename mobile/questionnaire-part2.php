@@ -30,7 +30,7 @@
 <body>
 
     <h1>ชื่อ-นามสกุล</h1>
-    <form id="userInfoForm" action="submit-questionnaire-part2.php" method="post" role="form">
+    <form id="testForm" action="submit-questionnaire-part2.php" method="post" role="form">
 
         <input id="keyboard" type="text" name="fullname">
         <!-- button -->

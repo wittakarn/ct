@@ -30,7 +30,7 @@
 <body>
 
     <h1>Email</h1>
-    <form id="userInfoForm" action="submit-questionnaire-part3.php" method="post" role="form">
+    <form id="testForm" action="submit-questionnaire-part3.php" method="post" role="form">
 
         <input id="keyboard" type="text" name="email">
         <!-- button -->

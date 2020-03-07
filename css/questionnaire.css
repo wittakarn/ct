@@ -42,3 +42,8 @@ input[type="radio"][name="favoriteColor"]::after {
     color: #FF00FF;
     background: #FFFF00;
 }
+
+#testForm {
+    width: 90%;
+    margin: auto;
+}

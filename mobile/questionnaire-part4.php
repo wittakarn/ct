@@ -30,7 +30,7 @@
 <body>
 
     <h1>เบอร์โทรศัพท์</h1>
-    <form id="userInfoForm" action="submit-questionnaire-part4.php" method="post" role="form">
+    <form id="testForm" action="submit-questionnaire-part4.php" method="post" role="form">
 
         <input id="keyboard" type="text" name="phone">
         <!-- button -->

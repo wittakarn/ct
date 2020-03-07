@@ -22,9 +22,9 @@
 }
 
 .ui-keyboard-button {
-	min-height: 4em;
-    min-width: 3.4em;
-	margin: .12em;
+	min-height: 11vw;
+    min-width: 9.2vw;
+    margin: .3vw;
 	padding: 0;
 	cursor: pointer;
 	overflow: hidden;
