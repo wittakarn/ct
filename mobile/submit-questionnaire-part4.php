@@ -20,26 +20,24 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>กรุณารอสักครู่</h1>
-                <form id="form-submit" class="form-inline" action="questionnaire-part5.php" method="get">
-                    <?php
-                        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-                            $conn = DataBaseConnection::createConnect();
-                            
-                                if(isset($_REQUEST['uuid'])){
-                                    $conn->beginTransaction();
-                                    
-                                    UserInformation::updatePhone($conn, $_REQUEST['uuid'], $_REQUEST['phone']);
-                                    $phone = new Phone($conn, $_REQUEST);
-                                    $phone->create();
+                <?php
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+                        $conn = DataBaseConnection::createConnect();
+                        
+                            if(isset($_REQUEST['uuid'])){
+                                $conn->beginTransaction();
+                                
+                                UserInformation::updatePhone($conn, $_REQUEST['uuid'], $_REQUEST['phone']);
+                                $phone = new Phone($conn, $_REQUEST);
+                                $phone->create();
 
-                                    UserInformation::updateRoundCount($conn, $_REQUEST['uuid']);
-                                    
-                                    $conn->commit();
-                                }
-                        }
-                    ?>
-                    <input type="hidden" name="uuid" value="<?php echo $_REQUEST['uuid']; ?>" />
-                </form>
+                                UserInformation::updateRoundCount($conn, $_REQUEST['uuid']);
+                                
+                                $conn->commit();
+                            }
+                    }
+                ?>
+                <input type="hidden" name="uuid" value="<?php echo $_REQUEST['uuid']; ?>" />
             </div>
         </div>
     </div>
@@ -50,9 +48,7 @@
 <script src="<?php echo ROOT; ?>js/jquery.js"></script>
 
 <script type="text/javascript">
-    // var form = $("#form-submit");
     setTimeout(function(){
-        // form.submit();
         <?php
             $redirectUrl = ROOT."mobile/questionnaire-part2.php?uuid=".$_REQUEST['uuid'];
             if(isset($conn)){

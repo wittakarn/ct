@@ -25,6 +25,7 @@
                             $conn = DataBaseConnection::createConnect();
                             
                             try{
+                                $conn->beginTransaction();
                                 if(isset($_REQUEST['email'])){
                                     $user = User::get($conn, $_REQUEST['email']);
                                     $isFailed = true;
@@ -34,6 +35,7 @@
 
                                         $userKey = new UserKey($conn, $_REQUEST);
                                         $userKey->create($uuid);
+                                        $conn->commit();
                                     }
                                 }
 

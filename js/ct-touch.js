@@ -1,17 +1,25 @@
 function initTouch() {
     $('.ui-keyboard-button').on({
         'touchstart': function (event) {
-            var original = event.originalEvent;
-            var touch = original.changedTouches && original.changedTouches.length > 0 ? original.changedTouches.item(0) : null;
+            var originalEvent = event.originalEvent;
+            var changedTouche = originalEvent.changedTouches && originalEvent.changedTouches.length > 0 ? originalEvent.changedTouches.item(0) : null;
+
+            var touch = originalEvent && originalEvent.touches && originalEvent.touches[0];
+            var e = touch || event;
+            var offset = $(e.target).offset();
+
+            var offsetX = originalEvent.layerX || e.pageX - offset.left;
+            var offsetY = originalEvent.layerY || e.pageY - offset.top;
+            
             touchs = touchs.concat({
                 value: $(this).attr('data-value'),
                 keyDown: (new Date()).getTime(),
-                offsetX: new Number(original.layerX).toFixed(2),
-                offsetY: new Number(original.layerY).toFixed(2),
-                pageX: new Number(touch.pageX).toFixed(2),
-                pageY: new Number(touch.pageY).toFixed(2),
+                offsetX: new Number(offsetX).toFixed(2),
+                offsetY: new Number(offsetY).toFixed(2),
+                pageX: new Number(changedTouche.pageX).toFixed(2),
+                pageY: new Number(changedTouche.pageY).toFixed(2),
 
-                radius: new Number(touch.radiusX).toFixed(2),
+                radius: new Number(changedTouche.radiusX).toFixed(2),
 
                 doAlpha: 0,
                 doBeta: 0,

@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>เบอร์โทรศัพท์</title>
+    <title>Email</title>
     <link href="<?php echo ROOT; ?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo ROOT; ?>css/jquery-ui.css" rel="stylesheet">
     <link href="<?php echo ROOT; ?>css/questionnaire.css" rel="stylesheet">
@@ -58,7 +58,7 @@
     <!--script src="<?php echo ROOT; ?>js/ct-gyronorm.js"></script-->
     <script src="<?php echo ROOT; ?>js/ct-keyboard.js"></script>
     <script src="<?php echo ROOT; ?>js/ct-pressure.js"></script>
-    <script src="<?php echo ROOT; ?>js/ct-touch.js?101"></script>
+    <script src="<?php echo ROOT; ?>js/ct-touch.js?121"></script>
     <script src="<?php echo ROOT; ?>js/questionnaire-part3.js?101"></script>
     <script>
         var typeIndex = 0;

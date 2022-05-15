@@ -58,7 +58,7 @@
     <!--script src="<?php echo ROOT; ?>js/ct-gyronorm.js"></script-->
     <script src="<?php echo ROOT; ?>js/ct-keyboard.js"></script>
     <script src="<?php echo ROOT; ?>js/ct-pressure.js"></script>
-    <script src="<?php echo ROOT; ?>js/ct-touch.js?101"></script>
+    <script src="<?php echo ROOT; ?>js/ct-touch.js?121"></script>
     <script src="<?php echo ROOT; ?>js/questionnaire-part4.js?101"></script>
     <script>
         var typeIndex = 0;

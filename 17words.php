@@ -20,6 +20,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/display-sentense.css" rel="stylesheet">
+    </style>
 </head>
 
 <body>

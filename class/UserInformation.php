@@ -76,8 +76,8 @@ class UserInformation
 	public function createInfoForMobile($uuid){
 		$params = $this->requests;
 		$db = $this->dbh;
-		$query = "INSERT INTO user_information(id, gender, age, education, occupation, posture, round_count) VALUES 
-												(:id, :gender, :age, :education, :occupation, :posture, :roundCount)";
+		$query = "INSERT INTO user_information(id, gender, age, education, occupation, posture, round_count, device) VALUES 
+												(:id, :gender, :age, :education, :occupation, :posture, :roundCount, :device)";
 		$stmt = $db->prepare($query);
 		$stmt->bindValue(":id", $uuid, PDO::PARAM_STR); 
 		$stmt->bindParam(":gender", $params['gender'], PDO::PARAM_INT);
@@ -86,6 +86,7 @@ class UserInformation
 		$stmt->bindParam(":occupation", $params['occupation'], PDO::PARAM_INT);
 		$stmt->bindParam(":posture", $params['posture'], PDO::PARAM_INT);
 		$stmt->bindValue(":roundCount", 0, PDO::PARAM_INT);
+		$stmt->bindValue(":device", $_SERVER['HTTP_USER_AGENT'], PDO::PARAM_STR);
 		$stmt->execute();
 	}
 
